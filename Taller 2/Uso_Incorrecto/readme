@@ -1,0 +1,51 @@
+public class Vehiculo {
+    private String marca;
+    private String modelo;
+    private int año;
+
+    public Vehiculo(String marca, String modelo, int año) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        }
+        
+        //Aqui no se puede de ninguna manera utilizar el this, debido a que es un metodo estatico, 
+       // si se quisiiera utilizar es this, seria quitar el estatico y ya
+
+
+        public static void mostrarDetallesEstatico() {
+            System.out.println("Marca: " + this.marca); 
+            System.out.println("Modelo: " + this.modelo); 
+            System.out.println("Año: " + this.año); 
+    }
+}
+
+
+
+ESTE SERIA EL CODIGO CORRECTO
+
+public class Vehiculo {
+    private String marca;
+    private String modelo;
+    private int anio;
+
+    public Vehiculo(String marca, String modelo, int anio) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anio = anio;
+    }
+
+    public static void mostrarDetalles(String marca, String modelo, int anio) {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Año: " + anio);
+    }
+
+
+
+    public static void main(String[] args) {
+       
+        Vehiculo.mostrarDetalles("Toyota", "Corolla", 2020);
+
+        
+    }}
